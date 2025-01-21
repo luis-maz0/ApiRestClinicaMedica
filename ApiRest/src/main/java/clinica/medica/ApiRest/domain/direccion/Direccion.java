@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest.direccion;
+package clinica.medica.ApiRest.domain.direccion;
 
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotBlank;

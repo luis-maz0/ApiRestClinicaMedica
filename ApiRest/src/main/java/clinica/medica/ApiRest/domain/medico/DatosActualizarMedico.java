@@ -1,6 +1,6 @@
-package clinica.medica.ApiRest.medico;
+package clinica.medica.ApiRest.domain.medico;
 
-import clinica.medica.ApiRest.direccion.DatosDireccion;
+import clinica.medica.ApiRest.domain.direccion.DatosDireccion;
 import jakarta.validation.constraints.NotNull;
 
 public record DatosActualizarMedico(

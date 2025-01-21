@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest.medico;
+package clinica.medica.ApiRest.domain.medico;
 
 public record DatosRespuestaMedico(
         Long id,

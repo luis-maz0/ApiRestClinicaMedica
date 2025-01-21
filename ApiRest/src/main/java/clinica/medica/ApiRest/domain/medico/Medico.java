@@ -1,6 +1,6 @@
-package clinica.medica.ApiRest.medico;
+package clinica.medica.ApiRest.domain.medico;
 
-import clinica.medica.ApiRest.direccion.Direccion;
+import clinica.medica.ApiRest.domain.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

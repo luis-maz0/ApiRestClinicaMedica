@@ -1,6 +1,6 @@
 package clinica.medica.ApiRest.controller;
 
-import clinica.medica.ApiRest.medico.*;
+import clinica.medica.ApiRest.domain.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest.medico;
+package clinica.medica.ApiRest.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
