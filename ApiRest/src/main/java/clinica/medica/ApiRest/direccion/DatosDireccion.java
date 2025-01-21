@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest;
+package clinica.medica.ApiRest.direccion;
 
 public record DatosDireccion(
         String calle,
