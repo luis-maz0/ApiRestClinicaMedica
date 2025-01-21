@@ -20,4 +20,12 @@ public class Direccion {
         this.calle = direccion.calle();
         this.ciudad = direccion.ciudad();
     }
+
+    public @NotBlank String getCalle() {
+        return calle;
+    }
+
+    public @NotBlank String getCiudad() {
+        return ciudad;
+    }
 }

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 @Table(name = "medicos")
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
@@ -32,6 +31,8 @@ public class Medico {
     })
     private Direccion direccion;
 
+    public Medico(){}
+
     public Medico(DatosRegistroMedico dataRegistroMedico) {
         this.nombre = dataRegistroMedico.nombre();
         this.email = dataRegistroMedico.email();
@@ -39,5 +40,33 @@ public class Medico {
         this.especialidad = dataRegistroMedico.especialidad();
         this.direccion = new Direccion( dataRegistroMedico.direccion());
         this.telefono = dataRegistroMedico.telefono();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
     }
 }
