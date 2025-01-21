@@ -4,7 +4,6 @@ import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
@@ -27,5 +26,15 @@ public class Direccion {
 
     public @NotBlank String getCiudad() {
         return ciudad;
+    }
+
+    public Direccion actualizarDireccion(DatosDireccion direccion) {
+        if(direccion.ciudad() != null){
+            this.ciudad = direccion.ciudad();
+        }
+        if( direccion.calle()!= null){
+            this.calle = direccion.calle();
+        }
+        return this;
     }
 }

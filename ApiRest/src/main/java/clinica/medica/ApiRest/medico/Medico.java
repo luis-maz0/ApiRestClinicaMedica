@@ -69,4 +69,18 @@ public class Medico {
     public Direccion getDireccion() {
         return direccion;
     }
+
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        //Verificacion de datos nulos (solo quiero actualizar una cosa)
+        if( datosActualizarMedico.nombre() != null){
+            this.nombre = datosActualizarMedico.nombre();
+        }
+        if( datosActualizarMedico.documento() != null){
+            this.documento = datosActualizarMedico.documento();
+        }
+        if( datosActualizarMedico.direccion() != null){
+            this.direccion = direccion.actualizarDireccion( datosActualizarMedico.direccion());;
+        }
+
+    }
 }
