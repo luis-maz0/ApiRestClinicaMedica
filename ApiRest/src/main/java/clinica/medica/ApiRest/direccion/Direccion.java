@@ -1,6 +1,7 @@
 package clinica.medica.ApiRest.direccion;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Embeddable
 public class Direccion {
+    @NotBlank
     private String calle;
+    @NotBlank
     private String ciudad;
 
     public Direccion(){}
-
     public Direccion(DatosDireccion direccion) {
         this.calle = direccion.calle();
         this.ciudad = direccion.ciudad();
