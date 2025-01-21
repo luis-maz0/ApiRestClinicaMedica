@@ -1,6 +1,7 @@
 package clinica.medica.ApiRest.controller;
 
 import clinica.medica.ApiRest.domain.usuarios.DatosAutenticacionUsuario;
+import clinica.medica.ApiRest.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +19,16 @@ public class AutenticacionController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
-    public ResponseEntity<DatosAutenticacionUsuario> autenticarUsuario(@RequestBody DatosAutenticacionUsuario datosAutenticacionUsuario){
-        Authentication token = new UsernamePasswordAuthenticationToken(
+    public ResponseEntity autenticarUsuario(@RequestBody DatosAutenticacionUsuario datosAutenticacionUsuario){
+        Authentication authToken = new UsernamePasswordAuthenticationToken(
                 datosAutenticacionUsuario.login(),
                 datosAutenticacionUsuario.clave());
-        authenticationManager.authenticate(token);
-        return ResponseEntity.ok().build();
+        authenticationManager.authenticate(authToken);
+        var JWToken = tokenService.generarToken();
+        return ResponseEntity.ok(JWToken);
     }
 }
