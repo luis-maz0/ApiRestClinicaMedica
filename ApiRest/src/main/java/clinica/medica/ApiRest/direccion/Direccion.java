@@ -6,12 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
 public class Direccion {
     private String calle;
     private String ciudad;
+
+    public Direccion(){}
 
     public Direccion(DatosDireccion direccion) {
         this.calle = direccion.calle();

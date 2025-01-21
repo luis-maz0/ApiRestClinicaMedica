@@ -25,6 +25,10 @@ public class Medico {
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "calle", column = @Column(name = "calle")),
+            @AttributeOverride(name = "ciudad", column = @Column(name = "ciudad"))
+    })
     private Direccion direccion;
 
     public Medico(DatosRegistroMedico dataRegistroMedico) {
