@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest.infra;
+package clinica.medica.ApiRest.infra.errores;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

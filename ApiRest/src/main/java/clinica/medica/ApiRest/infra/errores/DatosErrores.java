@@ -1,4 +1,4 @@
-package clinica.medica.ApiRest.infra;
+package clinica.medica.ApiRest.infra.errores;
 
 import org.springframework.validation.FieldError;
 
