@@ -1,5 +1,6 @@
 package clinica.medica.ApiRest.controller;
 
+import clinica.medica.ApiRest.medico.DatosListadoMedico;
 import clinica.medica.ApiRest.medico.DatosRegistroMedico;
 import clinica.medica.ApiRest.medico.Medico;
 import clinica.medica.ApiRest.medico.MedicoRepository;
@@ -23,7 +24,7 @@ public class medicoController {
         medicoRepository.save( new Medico(dataRegistroMedico) );
     }
     @GetMapping()
-    public List<Medico> listadoMedicos(){
-        return medicoRepository.findAll();
+    public List<DatosListadoMedico> listadoMedicos(){
+        return medicoRepository.findAll().stream().map( medico -> new DatosListadoMedico(medico) ).toList();
     }
 }
