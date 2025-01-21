@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 
 @Entity()
 @Table(name = "medicos")
@@ -18,6 +16,7 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Boolean activo;
     private String nombre;
     private String email;
     private String telefono;
@@ -40,6 +39,7 @@ public class Medico {
         this.especialidad = dataRegistroMedico.especialidad();
         this.direccion = new Direccion( dataRegistroMedico.direccion());
         this.telefono = dataRegistroMedico.telefono();
+        this.activo = true;
     }
 
     public Long getId() {
@@ -70,6 +70,10 @@ public class Medico {
         return direccion;
     }
 
+    public Boolean getActivo() {
+        return activo;
+    }
+
     public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
         //Verificacion de datos nulos (solo quiero actualizar una cosa)
         if( datosActualizarMedico.nombre() != null){
@@ -82,5 +86,8 @@ public class Medico {
             this.direccion = direccion.actualizarDireccion( datosActualizarMedico.direccion());;
         }
 
+    }
+    public void estaInactivo() {
+        this.activo = false;
     }
 }

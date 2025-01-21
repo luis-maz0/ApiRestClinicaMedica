@@ -36,11 +36,25 @@ public class medicoController {
         Medico medico = medicoRepository.getReferenceById(datosActualizarMedico.id());
         medico.actualizarDatos(datosActualizarMedico);
     }
+    /*
+    //***ELIMINACIÓN FISICA***
     //Se utiliza path variable
     @DeleteMapping("/{id}")
     @Transactional
     public void eliminarMedico(@PathVariable Long id){
         Medico medico = medicoRepository.getReferenceById(id);
         medicoRepository.delete(medico);
+    }
+    */
+    //***ELIMINACION LOGICA***
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarMedico(@PathVariable Long id){
+        Medico medico = medicoRepository.getReferenceById(id);
+        medico.estaInactivo();
+    }
+    @GetMapping("/activos")
+    public Page<DatosListadoMedico> listadoMedicosActivos(Pageable paginacion){
+        return medicoRepository.findByActivoTrue(paginacion).map(medico -> new DatosListadoMedico(medico));
     }
 }
