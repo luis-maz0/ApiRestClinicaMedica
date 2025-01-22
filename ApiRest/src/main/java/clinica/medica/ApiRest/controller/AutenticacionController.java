@@ -4,7 +4,6 @@ import clinica.medica.ApiRest.domain.usuarios.DatosAutenticacionUsuario;
 import clinica.medica.ApiRest.domain.usuarios.Usuario;
 import clinica.medica.ApiRest.infra.security.DatosJWTToken;
 import clinica.medica.ApiRest.infra.security.TokenService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
